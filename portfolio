@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pallapati Saikrishna | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --accent: #3498db;
+      --background: #f4f6f8;
+      --white: #fff;
+      --text: #333;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--primary);
+      color: var(--white);
+      text-align: center;
+      padding: 50px 20px;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.1em;
+      font-weight: 300;
+    }
+    nav {
+      background: #34495e;
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      color: var(--white);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    section {
+      background: var(--white);
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+    .profile-img {
+      display: block;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .project {
+      margin-bottom: 20px;
+    }
+    .project h3 {
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #555;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Pallapati Saikrishna</h1>
+    <p>CS Engineering student | Frontend & Python Developer</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#internships">Internships</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <img src="https://media.licdn.com/dms/image/v2/D4E03AQHmFgXGLQG1ZQ/profile-displayphoto-shrink_200_200/B4EZbdxKeCHYAY-/0/1747477378104?e=1756944000&v=beta&t=LxCdkYrjuqvv-YmOzaFvhEv7ueuaJBPowXV3xEa8g0c" alt="Saikrishna Photo" class="profile-img" />
+  </section>
+
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li>C Programming</li>
+      <li>Python</li>
+      <li>HTML & CSS</li>
+      <li>JavaScript</li>
+      <li>SQL</li>
+      <li>DBMS</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Car Parking Slots System</h3>
+    </div>
+    <div class="project">
+      <h3>Landing Page</h3>
+    </div>
+    <div class="project">
+      <h3>Calculator App</h3>
+    </div>
+    <div class="project">
+      <h3>Personal Portfolio Website</h3>
+    </div>
+  </section>
+
+  <section id="internships">
+    <h2>Internships</h2>
+    <div class="project">
+      <h3>Web Development Intern – CODSOFT</h3>
+    </div>
+    <div class="project">
+      <h3>Python Programming Intern – Oasis Infobyte</h3>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+      <li>Effective Problem-Solving and Decision-Making – Coursera</li>
+      <li>Emotional and Social Intelligence – Coursera</li>
+      <li>C for Everyone: Programming Fundamentals – Coursera</li>
+      <li>Angular Certificate – Infosys Springboard</li>
+      <li>Python Basics – HackerRank</li>
+      <li>SQL Basics – HackerRank</li>
+      <li>Networking Essentials – Cisco Networking Academy</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul>
+      <li><i class="fas fa-envelope"></i> <a href="mailto:saiipallapati@gmail.com">saiipallapati@gmail.com</a></li>
+      <li><i class="fas fa-phone"></i> +91 7780238400</li>
+      <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/saii-pallapati-b8069b345" target="_blank">LinkedIn Profile</a></li>
+      <li><i class="fas fa-code"></i> <a href="https://leetcode.com/saiipallapti" target="_blank">LeetCode Profile</a></li>
+      <li><i class="fas fa-map-marker-alt"></i> Bengaluru, India</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pallapati Saikrishna</p>
+  </footer>
+
+</body>
+</html>
