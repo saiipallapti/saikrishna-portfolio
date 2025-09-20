@@ -2,202 +2,734 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pallapati Saikrishna | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <title>Saikrishna Pallapati | Software & Web Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI'] },
+          colors: {
+            brand: {
+              50: '#eef7ff',
+              100: '#d8ecff',
+              200: '#b6dbff',
+              300: '#8abfff',
+              400: '#5aa3ff',
+              500: '#2f86ff',
+              600: '#1d6aee',
+              700: '#1b57c9',
+              800: '#1a49a6',
+              900: '#173d86',
+            },
+            ink: {
+              900: '#0b1020',
+              800: '#0e1530',
+              700: '#111a3a'
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,0.12)',
+            glow: '0 10px 30px rgba(47,134,255,0.25)'
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #2c3e50;
-      --accent: #3498db;
-      --background: #f4f6f8;
-      --white: #fff;
-      --text: #333;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    header {
-      background: var(--primary);
-      color: var(--white);
-      text-align: center;
-      padding: 50px 20px;
-    }
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.1em;
-      font-weight: 300;
-    }
-    nav {
-      background: #34495e;
-      text-align: center;
-      padding: 10px;
-    }
-    nav a {
-      color: var(--white);
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover {
-      color: var(--accent);
-    }
-    section {
-      background: var(--white);
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    section h2 {
-      color: var(--primary);
-      margin-bottom: 20px;
-      font-size: 1.8em;
-    }
-    .profile-img {
-      display: block;
-      margin: 0 auto 20px;
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li {
-      padding: 8px 0;
-      border-bottom: 1px solid #eee;
-    }
-    .project {
-      margin-bottom: 20px;
-    }
-    .project h3 {
-      color: var(--accent);
-      margin-bottom: 5px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #555;
-    }
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 700px) {
-      header h1 {
-        font-size: 1.8em;
-      }
-      section {
-        padding: 20px;
-      }
-    }
+    html { scroll-behavior: smooth; }
+    .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    .gradient-text { background: linear-gradient(90deg,#60a5fa,#34d399,#a78bfa); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    :focus-visible { outline: 2px solid #2f86ff; outline-offset: 2px; border-radius: 8px; }
   </style>
 </head>
-<body>
+<body class="font-sans text-slate-100 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900 min-h-screen relative">
+  <!-- Subtle pattern -->
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 opacity-[0.07]" style="background-size: 26px 26px; background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0);"></div>
 
-  <header>
-    <h1>Pallapati Saikrishna</h1>
-    <p>CS Engineering student | Frontend & Python Developer</p>
+  <!-- Header / Nav -->
+  <header class="fixed top-0 inset-x-0 z-50">
+    <nav class="glass border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-4 md:px-6">
+        <div class="h-16 flex items-center justify-between">
+          <a href="#home" class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-500 to-violet-500 grid place-items-center shadow-glow">
+              <span class="font-extrabold">SP</span>
+            </div>
+            <span class="font-semibold tracking-tight">Saikrishna Pallapati</span>
+          </a>
+          <div class="hidden md:flex items-center gap-1">
+            <a href="#about" class="nav-link px-3 py-2 rounded-lg hover:bg-white/10 transition">About</a>
+            <a href="#skills" class="nav-link px-3 py-2 rounded-lg hover:bg-white/10 transition">Skills</a>
+            <a href="#achievements" class="nav-link px-3 py-2 rounded-lg hover:bg-white/10 transition">Achievements</a>
+            <a href="#projects" class="nav-link px-3 py-2 rounded-lg hover:bg-white/10 transition">Projects</a>
+            <a href="#internships" class="nav-link px-3 py-2 rounded-lg hover:bg-white/10 transition">Internships</a>
+            <a href="#certifications" class="nav-link px-3 py-2 rounded-lg hover:bg-white/10 transition">Certifications</a>
+            <a href="#contact" class="nav-link px-3 py-2 rounded-lg hover:bg-white/10 transition">Contact</a>
+          </div>
+          <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-white/10 transition" aria-label="Open menu">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="hidden md:hidden border-t border-white/10">
+        <div class="px-4 py-3 space-y-1">
+          <a href="#about" class="mobile-link block px-3 py-2 rounded-lg hover:bg-white/10 transition">About</a>
+          <a href="#skills" class="mobile-link block px-3 py-2 rounded-lg hover:bg-white/10 transition">Skills</a>
+          <a href="#achievements" class="mobile-link block px-3 py-2 rounded-lg hover:bg-white/10 transition">Achievements</a>
+          <a href="#projects" class="mobile-link block px-3 py-2 rounded-lg hover:bg-white/10 transition">Projects</a>
+          <a href="#internships" class="mobile-link block px-3 py-2 rounded-lg hover:bg-white/10 transition">Internships</a>
+          <a href="#certifications" class="mobile-link block px-3 py-2 rounded-lg hover:bg-white/10 transition">Certifications</a>
+          <a href="#contact" class="mobile-link block px-3 py-2 rounded-lg hover:bg-white/10 transition">Contact</a>
+        </div>
+      </div>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#internships">Internships</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <img src="https://media.licdn.com/dms/image/v2/D4E03AQHmFgXGLQG1ZQ/profile-displayphoto-shrink_200_200/B4EZbdxKeCHYAY-/0/1747477378104?e=1756944000&v=beta&t=LxCdkYrjuqvv-YmOzaFvhEv7ueuaJBPowXV3xEa8g0c" alt="Saikrishna Photo" class="profile-img" />
-  </section>
-
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <ul>
-      <li>C Programming</li>
-      <li>Python</li>
-      <li>HTML & CSS</li>
-      <li>JavaScript</li>
-      <li>SQL</li>
-      <li>DBMS</li>
-    </ul>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Car Parking Slots System</h3>
-    </div>
-    <div class="project">
-      <h3>Landing Page</h3>
-    </div>
-    <div class="project">
-      <h3>Calculator App</h3>
-    </div>
-    <div class="project">
-      <h3>Personal Portfolio Website</h3>
-    </div>
-  </section>
-
-  <section id="internships">
-    <h2>Internships</h2>
-    <div class="project">
-      <h3>Web Development Intern – CODSOFT</h3>
-    </div>
-    <div class="project">
-      <h3>Python Programming Intern – Oasis Infobyte</h3>
+  <!-- Hero -->
+  <section id="home" class="pt-28 md:pt-32">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="grid lg:grid-cols-[300px,1fr] gap-10 items-center">
+        <!-- Photo card -->
+        <div class="rounded-3xl bg-white/5 border border-white/10 p-5 md:p-6 shadow-soft relative">
+          <div id="photoDropzone" class="aspect-square rounded-2xl overflow-hidden bg-slate-900 grid place-items-center">
+            <!-- Visible photo element -->
+            <img id="profilePhoto" alt="Profile photo"
+                 class="w-full h-full object-cover hidden"
+                 onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none'; document.getElementById('photoFallback').classList.remove('hidden');">
+            <!-- Fallback avatar -->
+            <div id="photoFallback" class="w-full h-full grid place-items-center">
+              <div class="w-28 h-28 md:w-36 md:h-36 rounded-2xl bg-gradient-to-br from-brand-500 to-violet-500 grid place-items-center shadow-glow">
+                <span class="text-3xl md:text-4xl font-extrabold">SP</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 flex gap-2">
+            <input id="fileInput" type="file" accept="image/*" class="hidden">
+            <button id="uploadBtn" class="flex-1 px-4 py-2 rounded-xl bg-brand-500 hover:bg-brand-600 transition shadow-glow">Upload Photo</button>
+            <button id="pasteUrlBtn" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition">Use Image URL</button>
+            <button id="pastePathBtn" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition">Use File Path</button>
+          </div>
+          <p class="text-xs text-slate-400 mt-2">Tip: Upload a square photo for the best look. Local file paths won’t load directly on the web; use Upload or an https:// link.</p>
+        </div>
+        <!-- Intro -->
+        <div class="space-y-5">
+          <p class="text-brand-300 font-semibold tracking-wide">Software Developer • Web Developer</p>
+          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Hi, I’m <span class="gradient-text">Saikrishna Pallapati</span></h1>
+          <p class="text-slate-300 max-w-2xl">
+            Software developer crafting fast, clean web apps. I build responsive UIs, write reliable backends, and collaborate closely across teams to ship useful features with quality and speed.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-500 hover:bg-brand-600 transition shadow-glow">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7"/></svg>
+              Contact Me
+            </a>
+            <button id="copyEmail" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 17h8M8 13h8M9 7h6M5 21h14a2 2 0 002-2V9l-6-6H5a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              Copy Email
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <ul>
-      <li>Effective Problem-Solving and Decision-Making – Coursera</li>
-      <li>Emotional and Social Intelligence – Coursera</li>
-      <li>C for Everyone: Programming Fundamentals – Coursera</li>
-      <li>Angular Certificate – Infosys Springboard</li>
-      <li>Python Basics – HackerRank</li>
-      <li>SQL Basics – HackerRank</li>
-      <li>Networking Essentials – Cisco Networking Academy</li>
-    </ul>
+  <!-- Personal Info + Objective -->
+  <section id="about" class="mt-10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="grid lg:grid-cols-2 gap-6">
+        <!-- Personal Info -->
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8 shadow-soft">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">Personal Information</h2>
+          <div class="grid sm:grid-cols-2 gap-x-6 gap-y-3 text-slate-200">
+            <div>
+              <div class="text-slate-400 text-sm">Name</div>
+              <div class="font-semibold">Saikrishna Pallapati</div>
+            </div>
+            <div>
+              <div class="text-slate-400 text-sm">Email</div>
+              <div class="flex items-center gap-2">
+                <a id="emailLink" href="mailto:saiipallapati@gmail.com" class="font-semibold text-brand-300 hover:underline">saiipallapati@gmail.com</a>
+              </div>
+            </div>
+            <div>
+              <div class="text-slate-400 text-sm">Phone</div>
+              <a href="tel:+917780238400" class="font-semibold hover:underline">+91 7780238400</a>
+            </div>
+            <div>
+              <div class="text-slate-400 text-sm">Location</div>
+              <div class="font-semibold">Bengaluru, India</div>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-bold">Profiles</h3>
+              <button id="editProfiles" class="text-sm px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20">Edit links</button>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a id="linkGithub" href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition">GitHub</a>
+              <a id="linkPortfolio" href="https://your-portfolio.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition">Portfolio</a>
+              <a id="linkLinkedIn" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition">LinkedIn</a>
+              <a id="linkLeetCode" href="https://leetcode.com/your-username" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition">LeetCode</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Objective -->
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8 shadow-soft">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">About</h2>
+          <p class="text-slate-300">
+            Software and web developer with experience across frontend, basic backend, and databases. Comfortable with HTML, CSS, JavaScript, MySQL, AngularJS (basic), and Python (basic). I enjoy turning ideas into responsive, accessible experiences and iterating quickly with feedback.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <ul>
-      <li><i class="fas fa-envelope"></i> <a href="mailto:saiipallapati@gmail.com">saiipallapati@gmail.com</a></li>
-      <li><i class="fas fa-phone"></i> +91 7780238400</li>
-      <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/saii-pallapati-b8069b345" target="_blank">LinkedIn Profile</a></li>
-      <li><i class="fas fa-code"></i> <a href="https://leetcode.com/saiipallapti" target="_blank">LeetCode Profile</a></li>
-      <li><i class="fas fa-map-marker-alt"></i> Bengaluru, India</li>
-    </ul>
+  <!-- Key Skills -->
+  <section id="skills" class="mt-8">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8 shadow-soft">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">Developer Skills</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Product & Analytical -->
+          <div class="rounded-xl bg-slate-900/60 border border-white/10 p-5">
+            <h3 class="font-semibold mb-3">Frontend</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-lg bg-white/10">HTML</span>
+              <span class="px-3 py-1 rounded-lg bg-white/10">CSS</span>
+              <span class="px-3 py-1 rounded-lg bg-white/10">JavaScript</span>
+              <span class="px-3 py-1 rounded-lg bg-white/10">AngularJS (basic)</span>
+              <span class="px-3 py-1 rounded-lg bg-white/10">Responsive UI</span>
+            </div>
+          </div>
+          <!-- Technical -->
+          <div class="rounded-xl bg-slate-900/60 border border-white/10 p-5">
+            <h3 class="font-semibold mb-3">Backend & Database</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-lg bg-white/10">MySQL</span>
+              <span class="px-3 py-1 rounded-lg bg-white/10">REST APIs</span>
+              <span class="px-3 py-1 rounded-lg bg-white/10">Python (basic)</span>
+              <span class="px-3 py-1 rounded-lg bg-white/10">Node.js (basic)</span>
+              <span class="px-3 py-1 rounded-lg bg-white/10">Authentication (demo)</span>
+            </div>
+          </div>
+          <!-- Soft Skills -->
+          <div class="rounded-xl bg-slate-900/60 border border-white/10 p-5">
+            <h3 class="font-semibold mb-3">Collaboration</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-lg bg-white/10">Teamwork</span>
+              <span class="px-3 py-1 rounded-lg bg-white/10">Code reviews</span>
+              <span class="px-3 py-1 rounded-lg bg-white/10">Communication</span>
+              <span class="px-3 py-1 rounded-lg bg-white/10">Problem‑solving</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Pallapati Saikrishna</p>
+  <!-- Achievements -->
+  <section id="achievements" class="mt-8">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8 shadow-soft">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">Achievements</h2>
+        <ul class="grid sm:grid-cols-2 gap-4">
+          <li class="p-4 rounded-xl bg-slate-900/60 border border-white/10">
+            <div class="font-semibold">Finalist, DSA Mastermind Challenge</div>
+            <div class="text-slate-400 text-sm">Unstop</div>
+          </li>
+          <li class="p-4 rounded-xl bg-slate-900/60 border border-white/10">
+            <div class="font-semibold">AIR 13,879 in NCAT Exam</div>
+            <div class="text-slate-400 text-sm">Naukri.com</div>
+          </li>
+          <li class="p-4 rounded-xl bg-slate-900/60 border border-white/10 sm:col-span-2">
+            <div class="font-semibold">Solved 50+ LeetCode problems</div>
+            <div class="text-slate-400 text-sm">Arrays, Trees, DP, Graphs</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects (developer focus) -->
+  <section id="projects" class="mt-8">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8 shadow-soft">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold">Projects</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <article class="rounded-xl bg-slate-900/60 border border-white/10 p-5">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-lg font-semibold">Car Parking Slots System</h3>
+                <p class="text-sm text-slate-300 mt-1">Smart slot tracking and quick lookups.</p>
+              </div>
+              <button class="toggleDetails px-3 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-sm">Details</button>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="text-xs px-2 py-1 rounded bg-brand-500/20 text-brand-200">Python</span>
+              <span class="text-xs px-2 py-1 rounded bg-violet-500/20 text-violet-200">CLI</span>
+            </div>
+            <div class="details hidden mt-4 text-slate-300">
+              <ul class="list-disc list-inside space-y-1">
+                <li>Tracks occupied vs free slots</li>
+                <li>Simple flows and clear menus</li>
+              </ul>
+            </div>
+          </article>
+          <article class="rounded-xl bg-slate-900/60 border border-white/10 p-5">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-lg font-semibold">Landing Page</h3>
+                <p class="text-sm text-slate-300 mt-1">Clean, responsive layout for product promos.</p>
+              </div>
+              <button class="toggleDetails px-3 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-sm">Details</button>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="text-xs px-2 py-1 rounded bg-brand-500/20 text-brand-200">HTML</span>
+              <span class="text-xs px-2 py-1 rounded bg-emerald-500/20 text-emerald-200">CSS</span>
+              <span class="text-xs px-2 py-1 rounded bg-fuchsia-500/20 text-fuchsia-200">UX</span>
+            </div>
+            <div class="details hidden mt-4 text-slate-300">
+              <ul class="list-disc list-inside space-y-1">
+                <li>Hero, features, and testimonials</li>
+                <li>Mobile-first and fast to load</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internships -->
+  <section id="internships" class="mt-8">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8 shadow-soft">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">Internships</h2>
+        <ol class="relative border-s border-white/10 ml-2">
+          <li class="ms-6 mb-6">
+            <span class="absolute -start-3.5 mt-1.5 h-3 w-3 rounded-full bg-brand-500 shadow-glow"></span>
+            <h3 class="font-semibold">Web Development Intern – CODSOFT</h3>
+            <p class="text-slate-300 text-sm mt-1">Built pages and components focusing on usability and speed.</p>
+          </li>
+          <li class="ms-6">
+            <span class="absolute -start-3.5 mt-1.5 h-3 w-3 rounded-full bg-brand-500 shadow-glow"></span>
+            <h3 class="font-semibold">Python Programming Intern – Oasis Infobyte</h3>
+            <p class="text-slate-300 text-sm mt-1">Wrote scripts and practiced data handling and automation.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="mt-8">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8 shadow-soft">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">Certifications</h2>
+        <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <li class="flex items-start gap-3 p-4 rounded-xl bg-slate-900/60 border border-white/10">
+            <div class="w-6 h-6 rounded-full bg-emerald-500 grid place-items-center">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <div class="font-medium">HTML</div>
+              <div class="text-xs text-slate-400">Cisco — May 2025</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 p-4 rounded-xl bg-slate-900/60 border border-white/10">
+            <div class="w-6 h-6 rounded-full bg-emerald-500 grid place-items-center">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <div class="font-medium">SQL</div>
+              <div class="text-xs text-slate-400">HackerRank — May 2025</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 p-4 rounded-xl bg-slate-900/60 border border-white/10">
+            <div class="w-6 h-6 rounded-full bg-emerald-500 grid place-items-center">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <div class="font-medium">Python Programming</div>
+              <div class="text-xs text-slate-400">HackerRank — May 2025</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 p-4 rounded-xl bg-slate-900/60 border border-white/10">
+            <div class="w-6 h-6 rounded-full bg-emerald-500 grid place-items-center">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <div class="font-medium">Angular</div>
+              <div class="text-xs text-slate-400">Infosys Springboard — Apr 2025</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 p-4 rounded-xl bg-slate-900/60 border border-white/10">
+            <div class="w-6 h-6 rounded-full bg-emerald-500 grid place-items-center">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <div class="font-medium">AWS Solution Architecture</div>
+              <div class="text-xs text-slate-400">Forage — Jun 2025</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 p-4 rounded-xl bg-slate-900/60 border border-white/10">
+            <div class="w-6 h-6 rounded-full bg-emerald-500 grid place-items-center">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <div class="font-medium">C Programming</div>
+              <div class="text-xs text-slate-400">Coursera — Dec 2022</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="mt-8 mb-14">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8 shadow-soft">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">Contact</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <p class="text-slate-300">
+              Want to chat about roles or projects? Reach me anytime via email or send a quick note here.
+            </p>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7"/></svg>
+                <a href="mailto:saiipallapati@gmail.com" class="hover:underline">saiipallapati@gmail.com</a>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v1a2 2 0 01-2.18 2A19.86 19.86 0 013 5.18 2 2 0 015 3h1a2 2 0 012 1.72c.12.9.31 1.77.57 2.6a2 2 0 01-.45 2.11L7.1 10.9a16 16 0 006 6l1.47-1.02a2 2 0 012.11-.45c.83.26 1.7.45 2.6.57A2 2 0 0122 16.92z"/></svg>
+                <a href="tel:+917780238400" class="hover:underline">+91 7780238400</a>
+              </div>
+            </div>
+            <div class="flex gap-3 pt-1">
+              <button id="copyEmail2" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 17h8M8 13h8M9 7h6M5 21h14a2 2 0 002-2V9l-6-6H5a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                Copy Email
+              </button>
+              <a id="linkLinkedIn2" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-500 hover:bg-brand-600 transition shadow-glow">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.82-2 3.75-2 4 0 4.75 2.6 4.75 6v8.5h-4v-7.5c0-1.8 0-4-2.5-4s-2.88 2-2.88 3.9V23h-4V8.5z"/></svg>
+                Say hi on LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <form id="contactForm" class="space-y-4">
+            <div>
+              <label class="block text-sm mb-1" for="name">Name</label>
+              <input id="name" name="name" class="w-full px-4 py-2 rounded-xl bg-slate-900/60 border border-white/10 focus:border-brand-500" placeholder="Your name" required />
+            </div>
+            <div>
+              <label class="block text-sm mb-1" for="email">Email</label>
+              <input id="email" name="email" type="email" class="w-full px-4 py-2 rounded-xl bg-slate-900/60 border border-white/10 focus:border-brand-500" placeholder="you@example.com" required />
+            </div>
+            <div>
+              <label class="block text-sm mb-1" for="message">Message</label>
+              <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 rounded-xl bg-slate-900/60 border border-white/10 focus:border-brand-500" placeholder="Write a short message..." required></textarea>
+            </div>
+            <button type="submit" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-brand-500 hover:bg-brand-600 active:bg-brand-700 transition shadow-glow">Send Message</button>
+            <p id="formStatus" class="text-sm text-emerald-300 hidden">Thanks! Your message was noted locally.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="py-6 text-center text-slate-400 text-sm">
+        © <span id="year"></span> Saikrishna Pallapati. All rights reserved.
+      </div>
+    </div>
   </footer>
 
-</body>
+  <!-- Back to top -->
+  <button id="toTop" aria-label="Back to top" class="fixed bottom-6 right-6 p-3 rounded-xl bg-white/10 hover:bg-white/20 shadow-soft hidden">
+    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+  </button>
+
+  <!-- Photo URL Modal -->
+  <div id="urlModal" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative max-w-md mx-auto mt-28 rounded-2xl bg-slate-900 border border-white/10 p-6">
+      <h3 class="text-lg font-semibold mb-3">Use Image URL</h3>
+      <input id="urlInput" type="url" placeholder="https://example.com/photo.jpg" class="w-full px-4 py-2 rounded-xl bg-slate-800 border border-white/10 focus:border-brand-500" />
+      <div class="mt-4 flex justify-end gap-2">
+        <button id="cancelUrl" class="px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20">Cancel</button>
+        <button id="saveUrl" class="px-3 py-2 rounded-lg bg-brand-500 hover:bg-brand-600 shadow-glow">Save</button>
+      </div>
+      <p class="text-xs text-slate-400 mt-2">If the URL fails to load, the avatar will show instead.</p>
+    </div>
+  </div>
+
+  <!-- Edit Profiles Modal -->
+  <div id="profilesModal" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative max-w-lg mx-auto mt-24 rounded-2xl bg-slate-900 border border-white/10 p-6">
+      <h3 class="text-lg font-semibold mb-4">Edit Profile Links</h3>
+      <div class="grid gap-3">
+        <div>
+          <label class="text-sm text-slate-400">GitHub</label>
+          <input id="inGithub" type="url" class="w-full px-4 py-2 rounded-xl bg-slate-800 border border-white/10 focus:border-brand-500" placeholder="https://github.com/your-username">
+        </div>
+        <div>
+          <label class="text-sm text-slate-400">Portfolio</label>
+          <input id="inPortfolio" type="url" class="w-full px-4 py-2 rounded-xl bg-slate-800 border border-white/10 focus:border-brand-500" placeholder="https://your-portfolio.com">
+        </div>
+        <div>
+          <label class="text-sm text-slate-400">LinkedIn</label>
+          <input id="inLinkedIn" type="url" class="w-full px-4 py-2 rounded-xl bg-slate-800 border border-white/10 focus:border-brand-500" placeholder="https://www.linkedin.com/in/your-handle">
+        </div>
+        <div>
+          <label class="text-sm text-slate-400">LeetCode</label>
+          <input id="inLeetCode" type="url" class="w-full px-4 py-2 rounded-xl bg-slate-800 border border-white/10 focus:border-brand-500" placeholder="https://leetcode.com/your-username">
+        </div>
+      </div>
+      <div class="mt-4 flex justify-end gap-2">
+        <button id="cancelProfiles" class="px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20">Cancel</button>
+        <button id="saveProfiles" class="px-3 py-2 rounded-lg bg-brand-500 hover:bg-brand-600 shadow-glow">Save</button>
+      </div>
+      <p class="text-xs text-slate-400 mt-2">Links open in a new tab and never redirect this page.</p>
+    </div>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Smooth scroll offset
+    const OFFSET = 80;
+    function smoothScrollTo(id) {
+      const el = document.querySelector(id);
+      if (!el) return;
+      const y = el.getBoundingClientRect().top + window.pageYOffset - OFFSET;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (href.length > 1) { e.preventDefault(); smoothScrollTo(href); }
+      });
+    });
+
+    // Active link highlight
+    const navLinks = document.querySelectorAll('.nav-link');
+    const ids = ['about','skills','achievements','projects','internships','certifications','contact'];
+    const observed = ids.map(id => document.getElementById(id)).filter(Boolean);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.id;
+        const link = Array.from(navLinks).find(l => l.getAttribute('href') === '#' + id);
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('bg-white/10'));
+          if (link) link.classList.add('bg-white/10');
+        }
+      });
+    }, { rootMargin: '-50% 0px -50% 0px', threshold: 0 });
+    observed.forEach(sec => observer.observe(sec));
+
+    // Project details toggle
+    document.querySelectorAll('.toggleDetails').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('article');
+        const details = card.querySelector('.details');
+        const isHidden = details.classList.toggle('hidden');
+        btn.textContent = isHidden ? 'Details' : 'Hide';
+      });
+    });
+
+    // Back to top
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) toTop.classList.remove('hidden');
+      else toTop.classList.add('hidden');
+    });
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Toast helper
+    function toast(message) {
+      const t = document.createElement('div');
+      t.textContent = message;
+      t.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 rounded-xl bg-black/80 text-white text-sm shadow-soft z-[70]';
+      document.body.appendChild(t);
+      setTimeout(() => t.remove(), 2200);
+    }
+
+    // Email copy
+    const EMAIL = 'saiipallapati@gmail.com';
+    document.getElementById('copyEmail').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(EMAIL); toast('Email copied!'); }
+      catch { toast('Could not copy email'); }
+    });
+    document.getElementById('copyEmail2').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(EMAIL); toast('Email copied!'); }
+      catch { toast('Could not copy email'); }
+    });
+
+    // Profile photo: upload + drag-drop
+    const fileInput = document.getElementById('fileInput');
+    const uploadBtn = document.getElementById('uploadBtn');
+    const pasteUrlBtn = document.getElementById('pasteUrlBtn');
+    const pastePathBtn = document.getElementById('pastePathBtn');
+    const profilePhoto = document.getElementById('profilePhoto');
+    const photoFallback = document.getElementById('photoFallback');
+    const photoDropzone = document.getElementById('photoDropzone');
+
+    // Load saved photo if available
+    try {
+      const savedPhoto = localStorage.getItem('profilePhotoData');
+      if (savedPhoto) {
+        profilePhoto.src = savedPhoto;
+        profilePhoto.classList.remove('hidden');
+        photoFallback.classList.add('hidden');
+      }
+    } catch (e) {
+      // ignore storage errors
+    }
+
+    uploadBtn.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        const dataUrl = reader.result;
+        profilePhoto.src = dataUrl;
+        profilePhoto.classList.remove('hidden');
+        photoFallback.classList.add('hidden');
+        try { localStorage.setItem('profilePhotoData', dataUrl); } catch (e) {}
+        toast('Photo updated!');
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // Drag & drop support
+    ;['dragenter','dragover'].forEach(evt => photoDropzone.addEventListener(evt, (e) => { e.preventDefault(); photoDropzone.classList.add('ring-2','ring-brand-500'); }));
+    ;['dragleave','drop'].forEach(evt => photoDropzone.addEventListener(evt, () => photoDropzone.classList.remove('ring-2','ring-brand-500')));
+    photoDropzone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const file = e.dataTransfer.files && e.dataTransfer.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        const dataUrl = reader.result;
+        profilePhoto.src = dataUrl;
+        profilePhoto.classList.remove('hidden');
+        photoFallback.classList.add('hidden');
+        try { localStorage.setItem('profilePhotoData', dataUrl); } catch (e) {}
+        toast('Photo updated!');
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // Local file path note
+    pastePathBtn.addEventListener('click', () => {
+      toast('Local file paths like C:\\Users\\... cannot load here. Please use Upload or an https:// image link.');
+    });
+
+    // Photo by URL
+    const urlModal = document.getElementById('urlModal');
+    const urlInput = document.getElementById('urlInput');
+    const cancelUrl = document.getElementById('cancelUrl');
+    const saveUrl = document.getElementById('saveUrl');
+
+    function openUrlModal() { urlModal.classList.remove('hidden'); urlInput.value=''; urlInput.focus(); }
+    function closeUrlModal() { urlModal.classList.add('hidden'); }
+    pasteUrlBtn.addEventListener('click', openUrlModal);
+    cancelUrl.addEventListener('click', closeUrlModal);
+    saveUrl.addEventListener('click', () => {
+      const val = urlInput.value.trim();
+      if (!val) { toast('Please enter a URL'); return; }
+      profilePhoto.onload = () => {
+        profilePhoto.classList.remove('hidden');
+        photoFallback.classList.add('hidden');
+        try { localStorage.setItem('profilePhotoData', profilePhoto.src); } catch (e) {}
+        toast('Photo updated!');
+      };
+      profilePhoto.onerror = () => {
+        profilePhoto.src = '';
+        profilePhoto.style.display = 'none';
+        photoFallback.classList.remove('hidden');
+        toast('Could not load that image URL');
+      };
+      profilePhoto.style.display = '';
+      profilePhoto.src = val;
+      closeUrlModal();
+    });
+
+    // Edit Profiles
+    const profilesModal = document.getElementById('profilesModal');
+    const editProfiles = document.getElementById('editProfiles');
+    const cancelProfiles = document.getElementById('cancelProfiles');
+    const saveProfiles = document.getElementById('saveProfiles');
+
+    const linkGithub = document.getElementById('linkGithub');
+    const linkPortfolio = document.getElementById('linkPortfolio');
+    const linkLinkedIn = document.getElementById('linkLinkedIn');
+    const linkLeetCode = document.getElementById('linkLeetCode');
+    const linkLinkedIn2 = document.getElementById('linkLinkedIn2');
+
+    const inGithub = document.getElementById('inGithub');
+    const inPortfolio = document.getElementById('inPortfolio');
+    const inLinkedIn = document.getElementById('inLinkedIn');
+    const inLeetCode = document.getElementById('inLeetCode');
+
+    function openProfilesModal() {
+      inGithub.value = linkGithub.href;
+      inPortfolio.value = linkPortfolio.href;
+      inLinkedIn.value = linkLinkedIn.href;
+      inLeetCode.value = linkLeetCode.href;
+      profilesModal.classList.remove('hidden');
+    }
+    function closeProfilesModal() { profilesModal.classList.add('hidden'); }
+
+    editProfiles.addEventListener('click', openProfilesModal);
+    cancelProfiles.addEventListener('click', closeProfilesModal);
+    saveProfiles.addEventListener('click', () => {
+      const gh = inGithub.value || linkGithub.href;
+      const pf = inPortfolio.value || linkPortfolio.href;
+      const li = inLinkedIn.value || linkLinkedIn.href;
+      const lc = inLeetCode.value || linkLeetCode.href;
+      linkGithub.href = gh;
+      linkPortfolio.href = pf;
+      linkLinkedIn.href = li;
+      linkLinkedIn2.href = li;
+      linkLeetCode.href = lc;
+      closeProfilesModal();
+      toast('Links updated!');
+    });
+
+    // Contact form (no navigation)
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      status.classList.remove('hidden');
+      status.textContent = 'Thanks! Your message was noted locally.';
+      setTimeout(() => status.classList.add('hidden'), 4000);
+      form.reset();
+    });
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98217adbd0ea9374',t:'MTc1ODM3Mjk1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
